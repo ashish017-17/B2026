@@ -69,9 +69,9 @@ export default function FloatingNotes() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: i * 0.12, ease: "easeOut" }}
-            animate={{ y: [0, -8, 0] }}
+            animate={{ y: [0, -8, 0], rotate: note.rotation }}
             whileHover={{ scale: 1.06, rotate: 0, boxShadow: "0 0 40px rgba(151,187,244,0.25)" }}
-            style={{ rotate: note.rotation, transition: "box-shadow 0.3s" } as React.CSSProperties}
+            style={{ transition: "box-shadow 0.3s" }}
             className="w-[180px] md:w-[200px] h-[180px] bg-[#0f0f0f] border border-[#97bbf4]/15 rounded-[24px] flex flex-col items-center justify-center p-5 text-center shadow-xl cursor-pointer"
           >
             {/* Floating animation */}
