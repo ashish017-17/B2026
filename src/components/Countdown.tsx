@@ -36,7 +36,7 @@ export default function Countdown() {
 
   return (
     <section id="countdown" className="py-32 bg-black flex flex-col items-center justify-center">
-      <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-white/90 mb-12">
+      <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-[#97bbf4] drop-shadow-[0_0_15px_rgba(151,187,244,0.3)] mb-12">
         The Countdown Begins
       </h2>
       
@@ -47,9 +47,9 @@ export default function Countdown() {
           { label: "MINS", value: timeLeft.minutes },
           { label: "SECS", value: timeLeft.seconds },
         ].map((item, i) => (
-          <div key={i} className="flex flex-col items-center justify-center w-20 h-24 md:w-32 md:h-36 bg-[#111] rounded-2xl border border-white/10 shadow-2xl">
-            <span className="text-4xl md:text-6xl font-light text-white">{item.value.toString().padStart(2, "0")}</span>
-            <span className="text-[10px] md:text-xs text-white/50 tracking-[0.2em] mt-3">{item.label}</span>
+          <div key={i} className="flex flex-col items-center justify-center w-20 h-24 md:w-32 md:h-36 bg-[#111] rounded-2xl border border-[#97bbf4]/20 shadow-[0_0_20px_rgba(151,187,244,0.05)] hover:shadow-[0_0_40px_rgba(151,187,244,0.2)] hover:border-[#97bbf4]/50 transition-all duration-300 cursor-default group">
+            <span className="text-4xl md:text-6xl font-light text-white group-hover:text-[#97bbf4] transition-colors">{item.value.toString().padStart(2, "0")}</span>
+            <span className="text-[10px] md:text-xs text-[#97bbf4]/50 group-hover:text-[#97bbf4]/90 tracking-[0.2em] mt-3 font-medium transition-colors">{item.label}</span>
           </div>
         ))}
       </div>

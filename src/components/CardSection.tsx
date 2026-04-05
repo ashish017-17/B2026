@@ -23,11 +23,11 @@ export default function CardSection() {
         >
           {/* Front of Card */}
           <div 
-            className="absolute inset-0 w-full h-full rounded-[32px] bg-gradient-to-br from-white/10 to-transparent border border-white/10 flex flex-col items-center justify-center p-8 text-center shadow-2xl backdrop-blur-md group-hover:border-white/20 transition-colors" 
+            className="absolute inset-0 w-full h-full rounded-[32px] bg-[#97bbf4] border border-white/20 flex flex-col items-center justify-center p-8 text-center shadow-[0_0_50px_rgba(151,187,244,0.3)] group-hover:shadow-[0_0_80px_rgba(151,187,244,0.5)] transition-all duration-500" 
             style={{ backfaceVisibility: "hidden" }}
           >
-             <h3 className="text-6xl text-white/90 drop-shadow-lg" style={{ fontFamily: "var(--font-birthday)" }}>Open Me</h3>
-             <p className="mt-8 text-white/40 text-[11px] tracking-[0.3em] uppercase">Tap to open your card</p>
+             <h3 className="text-6xl text-white drop-shadow-xl" style={{ fontFamily: "var(--font-birthday)" }}>HAPPY BIRTHDAY</h3>
+             <p className="mt-10 text-white/80 text-[11px] tracking-[0.3em] uppercase font-semibold">Tap to open your card</p>
           </div>
           
           {/* Back of Card (Inside) */}
@@ -35,9 +35,9 @@ export default function CardSection() {
             className="absolute inset-0 w-full h-full rounded-[32px] bg-white border border-white/20 flex flex-col items-center p-12 text-center shadow-[0_0_80px_rgba(255,255,255,0.1)]" 
             style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
           >
-             <h3 className="text-6xl text-black/90 mb-10 mt-4 leading-tight" style={{ fontFamily: "var(--font-birthday)" }}>Happy<br/>Birthday</h3>
+             {/* <h3 className="text-6xl text-black/90 mb-10 mt-4 leading-tight" style={{ fontFamily: "var(--font-birthday)" }}>Happy<br/>Birthday</h3> */}
              <p className="text-[17px] text-black/70 font-light leading-relaxed">
-               May your day be as incredibly bright, loving, and beautiful as you are. I hope this year brings you everything your heart desires, and creates memories you will cherish forever.
+              Happy Birthday 🎉💖 Wishing you a day as beautiful, bright, and amazing as you are. May every year bring you endless smiles You truly deserve all the happiness in the world ✨🌸 I wish you the best of everything on this special day. sending you all my love and warm wishes on your special day. Happy Birthday! 🎂🎈
              </p>
              <div className="mt-auto flex flex-col items-center">
                  <p className="text-black/30 text-[10px] uppercase tracking-widest mb-1">With all my love</p>

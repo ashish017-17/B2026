@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Barlow, Dancing_Script } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/NavBar";
 import AudioPlayer from "@/components/AudioPlayer";
 
 const barlow = Barlow({ 
@@ -30,7 +29,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${barlow.variable} ${birthdayFont.variable} font-sans antialiased text-white bg-black`}>
         <AudioPlayer />
-        <NavBar />
         {children}
       </body>
     </html>

@@ -127,10 +127,10 @@ export default function SurpriseGift() {
         animate={{ opacity: step === 2 ? 1 : 0 }}
         transition={{ duration: 2 }}
       >
-        <div className="w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-white/[0.02] rounded-full blur-[100px] absolute" />
+        <div className="w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-[#97bbf4]/10 rounded-full blur-[100px] absolute" />
       </motion.div>
 
-      <h2 className="text-4xl md:text-5xl font-light text-white mb-20 tracking-tight text-center z-10">
+      <h2 className="text-4xl md:text-5xl font-light text-[#97bbf4] drop-shadow-[0_0_15px_rgba(151,187,244,0.3)] mb-20 tracking-tight text-center z-10">
         A Secret Surprise
       </h2>
       
@@ -141,13 +141,13 @@ export default function SurpriseGift() {
             <motion.button
               key="box"
               onClick={() => setStep(1)}
-              className="w-48 h-48 bg-[#111] hover:bg-[#1a1a1a] transition-colors border border-white/10 hover:border-white/20 rounded-[40px] flex flex-col items-center justify-center shadow-2xl backdrop-blur-sm group"
+              className="w-48 h-48 bg-[#97bbf4] hover:bg-[#7aaaf0] transition-all duration-300 border border-white/20 rounded-[40px] flex flex-col items-center justify-center shadow-[0_0_50px_rgba(151,187,244,0.4)] hover:shadow-[0_0_80px_rgba(151,187,244,0.6)] group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               exit={{ opacity: 0, scale: 0.5, y: -50, rotate: 10 }}
             >
-              <Gift size={56} className="text-white/60 group-hover:text-white transition-colors mb-5" strokeWidth={1} />
-              <span className="text-white/40 text-[10px] tracking-[0.2em] uppercase">Tap to unwrap</span>
+              <Gift size={56} className="text-white drop-shadow-md mb-5" strokeWidth={1.5} />
+              <span className="text-white/80 text-[10px] tracking-[0.2em] uppercase font-semibold">Tap to unwrap</span>
             </motion.button>
           )}
 
@@ -159,12 +159,12 @@ export default function SurpriseGift() {
               animate={{ opacity: 1, scale: 1, x: 0 }}
               exit={{ opacity: 0, scale: 0.9, x: -20 }}
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              className="max-w-[400px] w-full bg-[#111] border border-white/10 rounded-[40px] p-8 md:p-10 flex flex-col items-center shadow-[0_30px_60px_rgba(0,0,0,0.5)] relative"
+              className="max-w-[400px] w-full bg-[#111] border border-[#97bbf4]/15 rounded-[40px] p-8 md:p-10 flex flex-col items-center shadow-[0_30px_60px_rgba(0,0,0,0.5)] relative"
             >
-              <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mb-6">
-                <Lock size={20} className="text-white/50" />
+              <div className="w-12 h-12 bg-[#97bbf4]/10 rounded-full flex items-center justify-center mb-6 border border-[#97bbf4]/20">
+                <Lock size={20} className="text-[#97bbf4]/70" />
               </div>
-              <div className="text-[10px] text-white/30 tracking-widest uppercase mb-4">
+              <div className="text-[10px] text-[#97bbf4]/40 tracking-widest uppercase mb-4">
                 Question {quizIndex + 1} of {questions.length}
               </div>
               <h3 className="text-2xl text-white font-light text-center mb-2 tracking-tight">{currentQuestion.title}</h3>
@@ -179,10 +179,10 @@ export default function SurpriseGift() {
                     onClick={() => handleGuess(option.id, option.correct)} 
                     animate={wrongGuessId === option.id ? { x: [-5, 5, -5, 5, 0] } : {}}
                     transition={{ duration: 0.3 }}
-                    className={`w-full py-4 rounded-2xl font-medium text-[15px] transition-all border ${
+                    className={`w-full py-4 rounded-2xl font-medium text-[15px] transition-all duration-200 border ${
                       wrongGuessId === option.id 
                       ? "bg-red-500/10 border-red-500/30 text-red-500" 
-                      : "bg-white/5 hover:bg-white/10 text-white/80 border-white/5"
+                      : "bg-white/5 hover:bg-[#97bbf4]/15 hover:border-[#97bbf4]/30 hover:text-white text-white/80 border-white/5"
                     }`}
                   >
                     {option.text}
@@ -199,7 +199,7 @@ export default function SurpriseGift() {
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
-              className="max-w-[450px] w-full bg-[#111] border border-white/10 rounded-[40px] p-4 flex flex-col items-center shadow-[0_30px_60px_rgba(0,0,0,0.5)] relative"
+              className="max-w-[450px] w-full bg-[#111] border border-[#97bbf4]/20 rounded-[40px] p-4 flex flex-col items-center shadow-[0_0_60px_rgba(151,187,244,0.15)] relative"
             >
               <img 
                 src="/images/1.jpg" 

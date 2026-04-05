@@ -18,13 +18,13 @@ export default function MusicPage() {
           <Music size={40} className="text-white/60" />
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-light mb-6 tracking-[-2px]">The Playlist</h1>
+        <h1 className="text-5xl md:text-7xl font-light mb-6 tracking-[-2px]">only for you</h1>
         <p className="text-lg text-white/40 mb-16 font-light max-w-md mx-auto leading-relaxed">
           Click any track below to instantly play it through the premium audio player.
         </p>
         
         <div className="w-full bg-[#111] p-4 md:p-6 rounded-[32px] border border-white/5 flex flex-col gap-3 text-left">
-          <h3 className="text-white/40 text-[11px] tracking-[0.2em] uppercase mb-2 ml-4">Tracks Available</h3>
+          <h3 className="text-white/40 text-[11px] tracking-[0.2em] uppercase mb-2 ml-4">only for you</h3>
           {[
             { id: 1, name: "Tumse By Jubin N.", duration: "Full Track", src: "/music/tumse.mp3" },
           ].map(track => (
