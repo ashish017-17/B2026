@@ -16,8 +16,11 @@ const birthdayFont = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Premium Birthday Experience",
-  description: "A premium birthday experience web application",
+  title: "Happy Birthday",
+  description: "A special birthday experience",
+  icons: {
+    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>",
+  },
 };
 
 export default function RootLayout({

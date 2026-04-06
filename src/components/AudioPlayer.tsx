@@ -10,6 +10,7 @@ interface TrackEvent {
 
 export default function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [hasEverPlayed, setHasEverPlayed] = useState(false);
   const [isMuted, setIsMuted] = useState(false); 
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -26,6 +27,7 @@ export default function AudioPlayer() {
         audioRef.current.src = e.detail.src;
         audioRef.current.play().then(() => {
           setIsPlaying(true);
+          setHasEverPlayed(true);
           setIsMuted(false);
         }).catch(err => console.log('Autoplay blocked:', err));
       }
@@ -42,8 +44,11 @@ export default function AudioPlayer() {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
-      audioRef.current.play().then(() => setIsPlaying(true)).catch(console.error);
-      if (isMuted) setIsMuted(false); 
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+        setHasEverPlayed(true);
+      }).catch(console.error);
+      if (isMuted) setIsMuted(false);
     }
   };
 
@@ -80,8 +85,30 @@ export default function AudioPlayer() {
     }
   }, [isMuted]);
 
+  // Only render the wrapper once a track has ever been triggered (avoids layout shift on initial load)
+  if (!hasEverPlayed) {
+    return (
+      <audio
+        ref={audioRef}
+        src={trackInfo.src}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleLoadedMetadata}
+        onEnded={() => setIsPlaying(false)}
+        loop
+        playsInline
+      />
+    );
+  }
+
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[400px]">
+    <div
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[400px] transition-all duration-500"
+      style={{
+        opacity: isPlaying ? 1 : 0,
+        transform: `translateX(-50%) translateY(${isPlaying ? '0' : '20px'})`,
+        pointerEvents: isPlaying ? 'auto' : 'none',
+      }}
+    >
       <div className="bg-black/60 backdrop-blur-xl border border-white/10 rounded-3xl px-5 py-4 flex flex-col gap-3 shadow-[0_0_40px_rgba(0,0,0,0.5)] transition-all hover:bg-black/70">
         
         {/* Top Control Bar */}
@@ -119,14 +146,14 @@ export default function AudioPlayer() {
 
       </div>
 
-      <audio 
+      <audio
         ref={audioRef}
         src={trackInfo.src}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         onEnded={() => setIsPlaying(false)}
         loop
-        playsInline 
+        playsInline
       />
     </div>
   );
