@@ -76,7 +76,7 @@ export default function VoiceNote() {
 
   return (
     <section ref={sectionRef} className="w-full min-h-[70vh] bg-black flex flex-col items-center justify-center px-6 py-28">
-      <audio ref={audioRef} src="/music/voice-note.mp3" />
+      <audio ref={audioRef} src="/music/audio.mp3" />
 
       <div className="voice-card max-w-[520px] w-full bg-[#0a0a0a] border border-[#97bbf4]/15 rounded-[40px] p-8 md:p-10 flex flex-col gap-8 shadow-[0_0_60px_rgba(151,187,244,0.08)] opacity-0">
         {/* Header */}
@@ -84,8 +84,8 @@ export default function VoiceNote() {
           <div className="w-14 h-14 bg-[#97bbf4] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(151,187,244,0.4)] mb-2">
             <Volume2 size={24} className="text-white" />
           </div>
-          <h2 className="text-2xl text-white font-light tracking-tight">A message just for you</h2>
-          <p className="text-white/40 text-sm">❤️ Press play to listen</p>
+          <h2 className="text-2xl text-white font-light tracking-tight">your voice 😭</h2>
+          <p className="text-white/40 text-sm">❤️</p>
         </div>
 
         {/* Waveform */}
